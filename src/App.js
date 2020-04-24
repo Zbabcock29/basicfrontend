@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import './styles/BibleStudyStyle.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -9,11 +8,16 @@ import BibleStudy from './screens/BibleStudy';
 import Resources from './screens/Resources';
 import Home from './screens/Home';
 import Ministries from './screens/Ministries';
+import Login from './screens/Login';
+import Signup from './screens/Signup';
+import TermsofService from './screens/TermsofService';
+
 
 function App() {
   return (
     <Router>
       <div>
+        <header><img src={require('./photos/FellowshipLogo.jpg')} alt='' /></header>
         <ul className='appMain'>
         <li>
             <Link to='/'>Home</Link>
@@ -33,6 +37,9 @@ function App() {
           <li>
             <Link to='/Resources'>Resources</Link>
           </li>
+          <li id='Login'>
+            <Link to='/Login'>Log In</Link>
+          </li>
         </ul>
 
         <Route exact path='/' component={Home} />
@@ -41,6 +48,9 @@ function App() {
         <Route path='/Bible-Study' component={BibleStudy} />
         <Route path='/Ministries' component={Ministries} />
         <Route path='/Resources' component={Resources} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={Signup} />
+        <Route path='/terms-of-service' component={TermsofService} />
       </div>
     </Router>
   );
