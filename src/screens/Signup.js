@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Signup.css';
 import '../forms/Terms-of-Service.pdf'
-import buttonClicked from '../function.js';
 
 const Signup = () => (
 
@@ -21,7 +20,7 @@ const Signup = () => (
         <br/>
         <input type='checkbox' class='tosBox' />Agree to <a href='/terms-of-service'>Terms of Service</a>
         <br/>
-        <button class='signupBtn' onClick={buttonClicked()}>Sign Up!</button>
+        <button class='signupBtn' >Sign Up!</button>
                     {/* The above button should POST to the database and create a new user. Need to figure out how to make my button do that. */}
         </form>
     </div>

@@ -5,25 +5,43 @@ import '../styles/Login.css';
 class Login extends React.Component{
     constructor(props) {
         super(props);
+        this.state={value: ''};
 
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
+        // handleChange(event) {
+        //     this.setState({value: event.target.value})
+        // };
+
+        // handleSubmit(event) {
+        //     alert('Submission received' + this.state.value);
+        //     event.preventDefault();
+        // };
+
+        handleChange(event) {
+            this.setState({value: event.target.value});
+          }
+        
+          handleSubmit(event) {
+            alert('A name was submitted: ' + this.state.value);
+            event.preventDefault();
+          }
 
 
     render(){
         return(
-    <div class='formContainer'>
-        <form class='loginForm' method='GET'>
-            Username: <input id='username' />
+        <form className='loginForm'   onSubmit={this.handleSubmit}>
+            Username: <input type='text' value={this.state.value} id='username' onChange={this.handleChange} />
             <br/>
-            Password: <input id='password' />
+            Password: <input type='text' id='password' />
             <br/>
-            <input type='submit' class='loginbtn' />Login
+            <input type='submit' className='loginbtn' value='Log In'  />
             {/* The above should GET a response from the server and use auth to verify username and password. Need to figure out how to make my button do that. */}
             <br/>
+            <p>New member? Click <a className='signup' href='/signup'>here</a> to join the fellowship!</p>
         </form>
-        <p>New member? Click <a class='signup' href='/signup'>here</a> to join the fellowship!</p>
-    </div>
         );
     }
 }

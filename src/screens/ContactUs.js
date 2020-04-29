@@ -3,7 +3,7 @@ import '../styles/ContactStyle.css';
 
 
 const ContactUs = () => (
-    <div class='contactMain'>
+    <div className='contactMain'>
         <h2>Contact Us</h2>
         <p>Lorem ipsum for now.</p>
     </div>
